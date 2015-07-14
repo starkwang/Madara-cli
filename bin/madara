@@ -4,8 +4,18 @@ program = require('commander');
 
 program
   .version('0.0.1')
-  .option('-a, --all','Add all')
-  .parse(process.argv);
+  .option('-a, --all','Add all');
+
+program
+  .command('build,b','建立全部文件')
+  .action(function(argument) {
+    // body...
+    madara.constructAll();
+  });
+
+
+
+program.parse(process.argv);
 
 if(program.all){
   madara.constructAll();
